@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Android Batch 4 Day 7</string>
-    <string name="title">Title: </string>
+    <string name="title">Title:</string>
     <string name="rose">Rose</string>
     <string name="flower">Flower</string>
     <string name="type">Type:</string>
     <string name="burger_mini">Burger-Mini</string>
+    <string name="go_to_next">Go to Next</string>
 </resources>
