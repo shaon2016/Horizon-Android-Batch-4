@@ -6,4 +6,10 @@
     <string name="type">Type:</string>
     <string name="burger_mini">Burger-Mini</string>
     <string name="go_to_next">Go to Next</string>
+    <string name="profile">Profile</string>
+    <string name="account">Account</string>
+    <string name="amount">Amount</string>
+    <string name="_35_lakhs">35 lakhs</string>
+    <string name="cash_out_in_this_month">Cash out in this month</string>
+    <string name="_10_lakhs">10 lakhs</string>
 </resources>
