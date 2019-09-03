@@ -4,13 +4,16 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
-    <ImageView android:layout_width="match_parent"
+    <ImageView
+            android:id="@+id/ivFood"
+            android:layout_width="match_parent"
                android:src="@android:color/holo_green_light"
                android:layout_height="140dp"/>
 
     <TextView android:layout_width="match_parent"
               android:text="@string/burger_mini"
               android:textSize="18sp"
+              android:id="@+id/tvName"
               android:paddingTop="16dp"
               style="@style/TextAppearance.AppCompat.Body2"
               android:paddingStart="16dp"
@@ -19,6 +22,7 @@
 
     <TextView android:layout_width="match_parent"
               android:text="1600 BDT"
+              android:id="@+id/tvPrice"
               style="@style/TextAppearance.AppCompat.Body1"
               android:textSize="16sp"
               android:paddingStart="16dp"

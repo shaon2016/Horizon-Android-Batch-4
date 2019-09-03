@@ -7,14 +7,10 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/btnProfile"
-            android:text="@string/profile"
-    />
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/btnAccount"
-            android:text="@string/account"
-    />
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFoods"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 </LinearLayout>
