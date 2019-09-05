@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidbatch4day7.R
 import com.example.androidbatch4day7.adapter.FoodAdapter
+import com.example.androidbatch4day7.data.db.AppDb
 import com.example.androidbatch4day7.models.Food
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: FoodAdapter
+    private lateinit var db: AppDb
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,21 +24,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initVar() {
-        adapter = FoodAdapter(this, getItems())
+        db = AppDb.getInstance(this)
+
+        insertFoodIntoDB()
+        adapter = FoodAdapter(this, getItems() as ArrayList<Food>)
     }
 
-    private fun getItems(): ArrayList<Food> {
+    private fun insertFoodIntoDB() {
         val f1 = Food(1, "Orange", "", 1800)
+        db.foodDao().insert(f1)
         val f2 = Food(2, "Apple", "", 1200)
+        db.foodDao().insert(f2)
         val f3 = Food(3, "Banana", "", 2800)
+        db.foodDao().insert(f3)
 
-        val items = ArrayList<Food>()
-        items.add(f1)
-        items.add(f2)
-        items.add(f3)
-
-        return items
     }
+
+    private fun getItems() = db.foodDao().all()
 
     private fun initView() {
         rvFoods.layoutManager = LinearLayoutManager(this)
