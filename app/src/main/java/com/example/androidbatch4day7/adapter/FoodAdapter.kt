@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.androidbatch4day7.R
+import com.example.androidbatch4day7.data.db.AppDb
 import com.example.androidbatch4day7.models.Food
 
 class FoodAdapter(val context:Context, val items:ArrayList<Food>)  :
@@ -36,6 +38,17 @@ class FoodAdapter(val context:Context, val items:ArrayList<Food>)  :
         fun bind(f: Food) {
             tvName.text = f.name
             tvPrice.text = f.price.toString()
+
+            Glide.with(context)
+                .load(f.image)
+                .into(ivFood)
+
+            itemView.setOnClickListener {
+                val db = AppDb.getInstance(context)
+                db.foodDao().delete(f)
+                items.remove(f)
+                notifyDataSetChanged()
+            }
         }
 
     }
