@@ -1,6 +1,7 @@
 package com.example.androidbatch4day7.server_client
 
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 object RetroClient {
 
@@ -14,6 +15,7 @@ object RetroClient {
 
     private fun create(): Retrofit {
         return Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("http://shaoniiuc.com/")
             .build()
     }
